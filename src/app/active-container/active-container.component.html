@@ -1,0 +1,8 @@
+<div cdkDropList class="example-list" [cdkDropListData]="dndService.active" [cdkDropListConnectedTo]="['inactive-container-dropzone', 'toggle']"
+  id="active-container-dropzone" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+  <i class="material-icons example-box" *ngFor="let active of dndService.active" cdkDrag>{{active}}</i>
+  <span class="toggle" id="toggle" cdkDropList (cdkDropListEntered)="dropListEntered($event)">
+    <i *ngIf="!dndService.editMode" (click)="dndService.toggleEditMode(!dndService.editMode)" class="material-icons">expand_more</i>
+    <i *ngIf="dndService.editMode" (click)="dndService.toggleEditMode(!dndService.editMode)" class="material-icons">expand_less</i>
+  </span>
+</div>

@@ -1,0 +1,7 @@
+<div class="inactive">
+  <span>Other items</span>
+  <div cdkDropList class="example-list" id="inactive-container-dropzone" [cdkDropListData]="dndService.inactive"
+    [cdkDropListConnectedTo]="['active-container-dropzone']" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+    <i class="material-icons example-box" *ngFor="let inactive of dndService.inactive" cdkDrag>{{inactive}}</i>
+  </div>
+</div>
